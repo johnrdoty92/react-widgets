@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 import Display from "./Display";
 import Keypad from "./Keypad";
+import CalculatorHistory from "./CalculatorHistory";
 
 class Calculator extends Component {
   state = {
     equation: "",
-    history: [{}],
+    history: [],
   };
 
   handleNumClick = (i) => {
     const equation = this.state.equation.slice();
     let nextInput = i;
-
+    //Handle decimals
     if (i === "." && equation.indexOf(".") !== -1) {
       if (!equation.match(/[-+/*]/) || equation.match(/[-+/*]\d*[.]/)) {
         nextInput = "";
       }
     }
+    //Handle leading zeroes
+    if (i === 0 && (equation.length < 1 || equation.match(/[-+/*]$/))) {
+      nextInput = "";
+    }
+    //Add to the equation
     this.setState({
       equation: equation.concat(nextInput),
     });
@@ -25,7 +31,7 @@ class Calculator extends Component {
   handleOpClick = (i) => {
     const equation = this.state.equation.toString().slice();
     const history = this.state.history.slice();
-
+    //Handle "="
     if (i === "=") {
       try {
         const evaluated = eval(equation);
@@ -38,21 +44,20 @@ class Calculator extends Component {
         return;
       }
     }
+    //If no operator is currently set, add it to the equation
     if (equation.match(/[-*+/]/) === null) {
       this.setState({
         equation: equation.concat(i),
       });
       return;
     }
+    //If there is already an operator and a valid equation, evaluate and concatenate operator
     if (equation.match(/\d*[.]?\d+$/)) {
-      console.log("This equation is ready to evaluate");
-      //EVALUATE THE EQUATION
       const evaluated = eval(equation);
       this.setState({
         equation: evaluated + i,
         history: history.concat([{ eq: equation }]),
       });
-      console.log(this.state);
       return;
     }
   };
@@ -72,6 +77,7 @@ class Calculator extends Component {
           onOpClick={this.handleOpClick}
           onClearClick={this.handleClearClick}
         />
+        <CalculatorHistory history={this.state.history} />
       </div>
     );
   }
