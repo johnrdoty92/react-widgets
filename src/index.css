@@ -50,27 +50,3 @@ ul {
 .game-info {
   margin-left: 20px;
 }
-
-
-/* Calculator Styles */
-.display {
-  background-color: lime;
-  text-align: right;
-}
-.keypad {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-}
-.keypad :last-child { /*This is the equals button*/
-  grid-column: 1/5;
-}
-.num-btn {
-  background-color: red;
-}
-.op-btn {
-  background-color: purple;
-}
-.dec-btn {
-  background-color: grey;
-}

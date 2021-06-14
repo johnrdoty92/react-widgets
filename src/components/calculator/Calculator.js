@@ -65,7 +65,7 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div className="calculator">
+      <div className="calculator container">
         <Display equation={this.state.equation} />
         <Keypad
           onNumClick={this.handleNumClick}

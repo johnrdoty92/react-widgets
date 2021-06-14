@@ -18,16 +18,40 @@ class Keypad extends Component {
 
     return (
       <div className="container">
-        {numButtons}
-        {opButtons}
-        <ClearButton onClick={() => this.props.onClearClick()} />
+        <div className="row">
+          <NumButton onClick={() => this.props.onNumClick(7)} value={"7"} />
+          <NumButton onClick={() => this.props.onNumClick(8)} value={"8"} />
+          <NumButton onClick={() => this.props.onNumClick(9)} value={"9"} />
+          <OpButton onClick={() => this.props.onOpClick("/")} value={"/"} />
+        </div>
+        <div className="row">
+          <NumButton onClick={() => this.props.onNumClick(4)} value={"4"} />
+          <NumButton onClick={() => this.props.onNumClick(5)} value={"5"} />
+          <NumButton onClick={() => this.props.onNumClick(6)} value={"6"} />
+          <OpButton onClick={() => this.props.onOpClick("*")} value={"*"} />
+        </div>
+        <div className="row">
+          <NumButton onClick={() => this.props.onNumClick(1)} value={"1"} />
+          <NumButton onClick={() => this.props.onNumClick(2)} value={"2"} />
+          <NumButton onClick={() => this.props.onNumClick(3)} value={"3"} />
+          <OpButton onClick={() => this.props.onOpClick("-")} value={"-"} />
+        </div>
+        <div className="row">
+          <NumButton onClick={() => this.props.onNumClick(".")} value={"."} />
+          <NumButton onClick={() => this.props.onNumClick(2)} value={"0"} />
+          <ClearButton onClick={() => this.props.onClearClick()} />
+          <OpButton onClick={() => this.props.onOpClick("+")} value={"+"} />
+        </div>
+        <div className="row">
+          <OpButton onClick={() => this.props.onOpClick("=")} value={"="} />
+        </div>
       </div>
     );
   }
 }
 
 function NumButton(props) {
-  let classes = "btn btn-";
+  let classes = "m-1 col btn btn-";
   classes += props.value === "." ? "secondary" : "primary";
   return (
     <button onClick={props.onClick} className={classes}>
@@ -37,7 +61,7 @@ function NumButton(props) {
 }
 
 function OpButton(props) {
-  let classes = "btn btn-";
+  let classes = "m-1 col btn btn-";
   classes += props.value === "=" ? "danger" : "warning";
   return (
     <button onClick={props.onClick} className={classes}>
@@ -48,7 +72,7 @@ function OpButton(props) {
 
 function ClearButton(props) {
   return (
-    <button onClick={props.onClick} className="btn btn-success">
+    <button onClick={props.onClick} className="m-1 col btn btn-success">
       C
     </button>
   );
