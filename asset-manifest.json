@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/johnrdoty92/react-widgets.git/static/css/main.87036172.chunk.css",
-    "main.js": "/johnrdoty92/react-widgets.git/static/js/main.a5b953e9.chunk.js",
-    "main.js.map": "/johnrdoty92/react-widgets.git/static/js/main.a5b953e9.chunk.js.map",
-    "runtime-main.js": "/johnrdoty92/react-widgets.git/static/js/runtime-main.a2db1ee8.js",
-    "runtime-main.js.map": "/johnrdoty92/react-widgets.git/static/js/runtime-main.a2db1ee8.js.map",
-    "static/css/2.ef9168ec.chunk.css": "/johnrdoty92/react-widgets.git/static/css/2.ef9168ec.chunk.css",
-    "static/js/2.12e04c34.chunk.js": "/johnrdoty92/react-widgets.git/static/js/2.12e04c34.chunk.js",
-    "static/js/2.12e04c34.chunk.js.map": "/johnrdoty92/react-widgets.git/static/js/2.12e04c34.chunk.js.map",
-    "index.html": "/johnrdoty92/react-widgets.git/index.html",
-    "static/css/2.ef9168ec.chunk.css.map": "/johnrdoty92/react-widgets.git/static/css/2.ef9168ec.chunk.css.map",
-    "static/css/main.87036172.chunk.css.map": "/johnrdoty92/react-widgets.git/static/css/main.87036172.chunk.css.map",
-    "static/js/2.12e04c34.chunk.js.LICENSE.txt": "/johnrdoty92/react-widgets.git/static/js/2.12e04c34.chunk.js.LICENSE.txt"
+    "main.css": "/johnrdoty92/react-widgets/static/css/main.87036172.chunk.css",
+    "main.js": "/johnrdoty92/react-widgets/static/js/main.a5b953e9.chunk.js",
+    "main.js.map": "/johnrdoty92/react-widgets/static/js/main.a5b953e9.chunk.js.map",
+    "runtime-main.js": "/johnrdoty92/react-widgets/static/js/runtime-main.8ce5df6c.js",
+    "runtime-main.js.map": "/johnrdoty92/react-widgets/static/js/runtime-main.8ce5df6c.js.map",
+    "static/css/2.ef9168ec.chunk.css": "/johnrdoty92/react-widgets/static/css/2.ef9168ec.chunk.css",
+    "static/js/2.12e04c34.chunk.js": "/johnrdoty92/react-widgets/static/js/2.12e04c34.chunk.js",
+    "static/js/2.12e04c34.chunk.js.map": "/johnrdoty92/react-widgets/static/js/2.12e04c34.chunk.js.map",
+    "index.html": "/johnrdoty92/react-widgets/index.html",
+    "static/css/2.ef9168ec.chunk.css.map": "/johnrdoty92/react-widgets/static/css/2.ef9168ec.chunk.css.map",
+    "static/css/main.87036172.chunk.css.map": "/johnrdoty92/react-widgets/static/css/main.87036172.chunk.css.map",
+    "static/js/2.12e04c34.chunk.js.LICENSE.txt": "/johnrdoty92/react-widgets/static/js/2.12e04c34.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a2db1ee8.js",
+    "static/js/runtime-main.8ce5df6c.js",
     "static/css/2.ef9168ec.chunk.css",
     "static/js/2.12e04c34.chunk.js",
     "static/css/main.87036172.chunk.css",
