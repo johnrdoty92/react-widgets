@@ -10,16 +10,10 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 class Widgets extends React.Component {
   render() {
     return (
-      <div id="home" className="widgets-group">
-        <div className="widget">
+      <div id="home" className="container">
           <Game />
-        </div>
-        <div className="widget">
           <Calculator />
-        </div>
-        <div className="widget">
           <ShoppingApp />
-        </div>
       </div>
     );
   }

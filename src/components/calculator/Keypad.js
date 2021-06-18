@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Keypad extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="calculator__keypad">
         <div className="row">
           <Button onClick={this.props.onNumClick} value={"7"} />
           <Button onClick={this.props.onNumClick} value={"8"} />

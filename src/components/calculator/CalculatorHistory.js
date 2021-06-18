@@ -3,11 +3,11 @@ import React, { Component } from "react";
 const CalculatorHistory = (props) => {
   if (props.history) {
     const history = props.history.map((item, index) => {
-      return <div key={index}>{item.eq}</div>;
+      return <button onClick={() => props.onHistoryClick(item.eq, index)} className="btn btn-secondary m-1" key={index}>{item.eq}</button>;
     });
     return (
-      <div>
-        <h1>History</h1>
+      <div className="calculator__history">
+        <button className="btn btn-success m-1" onClick={props.onClearClick}>Clear History</button>
         {history}
       </div>
     );

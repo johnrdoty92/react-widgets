@@ -10,7 +10,7 @@ class Calculator extends Component {
   };
 
   handleNumClick = (i) => {
-    const equation = this.state.equation.slice();
+    const equation = this.state.equation.toString().slice();
     let nextInput = i;
     //Handle decimals
     if (i === "." && equation.indexOf(".") !== -1) {
@@ -68,16 +68,32 @@ class Calculator extends Component {
     });
   };
 
+  handleClearHistory = () => {
+    console.log('clear history');
+    this.setState({
+      history: [],
+    })
+  }
+
+handleHistoryClick = (item, index) => {
+  console.log("history click", item, index);
+  const history = this.state.history.slice(0,index+1)
+  this.setState({
+    equation: item,
+    history: history
+  })
+}
+
   render() {
     return (
-      <div className="calculator container bg-dark rounded">
-        <Display equation={this.state.equation} />
-        <Keypad
-          onNumClick={this.handleNumClick}
-          onOpClick={this.handleOpClick}
-          onClearClick={this.handleClearClick}
-        />
-        <CalculatorHistory history={this.state.history} />
+      <div className="calculator rounded">
+          <Display equation={this.state.equation} />
+          <Keypad
+            onNumClick={this.handleNumClick}
+            onOpClick={this.handleOpClick}
+            onClearClick={this.handleClearClick}
+          />
+          <CalculatorHistory history={this.state.history} onHistoryClick={this.handleHistoryClick} onClearClick={() => this.handleClearHistory()}/>
       </div>
     );
   }
