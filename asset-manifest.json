@@ -1,23 +1,32 @@
 {
   "files": {
-    "main.css": "/react-widgets/static/css/main.3425e20a.chunk.css",
-    "main.js": "/react-widgets/static/js/main.a1c12442.chunk.js",
-    "main.js.map": "/react-widgets/static/js/main.a1c12442.chunk.js.map",
+    "main.css": "/react-widgets/static/css/main.544e5ab0.chunk.css",
+    "main.js": "/react-widgets/static/js/main.17a46522.chunk.js",
+    "main.js.map": "/react-widgets/static/js/main.17a46522.chunk.js.map",
     "runtime-main.js": "/react-widgets/static/js/runtime-main.62b61f99.js",
     "runtime-main.js.map": "/react-widgets/static/js/runtime-main.62b61f99.js.map",
     "static/css/2.ef9168ec.chunk.css": "/react-widgets/static/css/2.ef9168ec.chunk.css",
-    "static/js/2.e0ba7797.chunk.js": "/react-widgets/static/js/2.e0ba7797.chunk.js",
-    "static/js/2.e0ba7797.chunk.js.map": "/react-widgets/static/js/2.e0ba7797.chunk.js.map",
+    "static/js/2.3310ad5b.chunk.js": "/react-widgets/static/js/2.3310ad5b.chunk.js",
+    "static/js/2.3310ad5b.chunk.js.map": "/react-widgets/static/js/2.3310ad5b.chunk.js.map",
     "index.html": "/react-widgets/index.html",
     "static/css/2.ef9168ec.chunk.css.map": "/react-widgets/static/css/2.ef9168ec.chunk.css.map",
-    "static/css/main.3425e20a.chunk.css.map": "/react-widgets/static/css/main.3425e20a.chunk.css.map",
-    "static/js/2.e0ba7797.chunk.js.LICENSE.txt": "/react-widgets/static/js/2.e0ba7797.chunk.js.LICENSE.txt"
+    "static/css/main.544e5ab0.chunk.css.map": "/react-widgets/static/css/main.544e5ab0.chunk.css.map",
+    "static/js/2.3310ad5b.chunk.js.LICENSE.txt": "/react-widgets/static/js/2.3310ad5b.chunk.js.LICENSE.txt",
+    "static/media/cloudy.059d5ba9.svg": "/react-widgets/static/media/cloudy.059d5ba9.svg",
+    "static/media/misty.3f44762e.svg": "/react-widgets/static/media/misty.3f44762e.svg",
+    "static/media/night-cloudy.846f75cf.svg": "/react-widgets/static/media/night-cloudy.846f75cf.svg",
+    "static/media/night.25885fbb.svg": "/react-widgets/static/media/night.25885fbb.svg",
+    "static/media/rain.9bc2ace0.svg": "/react-widgets/static/media/rain.9bc2ace0.svg",
+    "static/media/snow.d7d526a4.svg": "/react-widgets/static/media/snow.d7d526a4.svg",
+    "static/media/sunny-cloudy.496234df.svg": "/react-widgets/static/media/sunny-cloudy.496234df.svg",
+    "static/media/sunny.5ba92e9f.svg": "/react-widgets/static/media/sunny.5ba92e9f.svg",
+    "static/media/thunder.8dfd7339.svg": "/react-widgets/static/media/thunder.8dfd7339.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.62b61f99.js",
     "static/css/2.ef9168ec.chunk.css",
-    "static/js/2.e0ba7797.chunk.js",
-    "static/css/main.3425e20a.chunk.css",
-    "static/js/main.a1c12442.chunk.js"
+    "static/js/2.3310ad5b.chunk.js",
+    "static/css/main.544e5ab0.chunk.css",
+    "static/js/main.17a46522.chunk.js"
   ]
 }
