@@ -3,32 +3,32 @@ import React, { Component } from "react";
 class Keypad extends Component {
   render() {
     return (
-      <div className="calculator__keypad">
-        <div className="row">
+      <div className="calculator__keypad container">
+        <div className="row gx-5">
           <Button onClick={this.props.onNumClick} value={"7"} />
           <Button onClick={this.props.onNumClick} value={"8"} />
           <Button onClick={this.props.onNumClick} value={"9"} />
           <Button onClick={this.props.onOpClick} value={"/"} />
         </div>
-        <div className="row">
+        <div className="row gx-5">
           <Button onClick={this.props.onNumClick} value={"4"} />
           <Button onClick={this.props.onNumClick} value={"5"} />
           <Button onClick={this.props.onNumClick} value={"6"} />
           <Button onClick={this.props.onOpClick} value={"*"} />
         </div>
-        <div className="row">
+        <div className="row gx-5">
           <Button onClick={this.props.onNumClick} value={"1"} />
           <Button onClick={this.props.onNumClick} value={"2"} />
           <Button onClick={this.props.onNumClick} value={"3"} />
           <Button onClick={this.props.onOpClick} value={"+"} />
         </div>
-        <div className="row">
+        <div className="row gx-5">
           <Button onClick={this.props.onNumClick} value={"."} />
           <Button onClick={this.props.onNumClick} value={"0"} />
           <Button onClick={this.props.onClearClick} value={"C"} />
           <Button onClick={this.props.onOpClick} value={"-"} />
         </div>
-        <div className="row">
+        <div className="row gx-5">
           <Button onClick={this.props.onOpClick} value={"="} />
         </div>
       </div>
@@ -37,7 +37,7 @@ class Keypad extends Component {
 }
 
 function Button(props) {
-  let classes = "m-1 col btn btn-";
+  let classes = "col m-1 btn btn-";
   switch (props.value) {
     case "0":
     case "1":

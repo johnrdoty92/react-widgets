@@ -1,126 +1,88 @@
-import React from "react";
+import React, { Component } from "react";
 
-//================================ TIC TAC TOE ================================
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
+    <button className="board__square" onClick={props.onClick}>
       {props.value}
     </button>
   );
 }
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return (
-      <Square
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    );
-  }
-
+class Board extends Component {
   render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
+    const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    const squares = nums.map((i) => {
+      return (
+        <Square
+          key={i}
+          onClick={() => this.props.onClick(i)}
+          value={this.props.squares[i]}
+        />
+      );
+    });
+    return <div className="board">{squares}</div>;
   }
 }
 
-class Game extends React.Component {
+class TicTacToe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      history: [
-        {
-          squares: Array(9).fill(null),
-        },
-      ],
-      stepNumber: 0,
+      squares: Array(9).fill(null),
       xIsNext: true,
     };
+    this.handleReset = this.handleReset.bind(this);
   }
+
   handleClick(i) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
-    const current = history[history.length - 1];
-    const squares = current.squares.slice();
-    if (calculateWinner(squares) || squares[i]) {
-      return;
+    if (!this.state.squares[i] && !determineWinner(this.state.squares)) {
+      const squares = this.state.squares.slice();
+      const xIsNext = !this.state.xIsNext;
+      squares[i] = this.state.xIsNext ? "X" : "O";
+
+      this.setState({
+        squares: squares,
+        xIsNext: xIsNext,
+      });
+      console.log(this.state.xIsNext, i);
     }
-    squares[i] = this.state.xIsNext ? "X" : "O";
-    this.setState({
-      history: history.concat([
-        {
-          squares: squares,
-        },
-      ]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext,
-    });
   }
 
-  jumpTo(step) {
+  handleReset() {
     this.setState({
-      stepNumber: step,
-      xIsNext: step % 2 === 0,
+      squares: Array(9).fill(null),
+      xIsNext: true,
     });
   }
-
   render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
-
-    const moves = history.map((step, move) => {
-      //step is the value, move is the index
-      const desc = move ? "Go to move #" + move : "Go to game start";
-      return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-
+    let winner = determineWinner(this.state.squares);
     let status;
     if (winner) {
-      status = "Winner: " + winner;
+      status = winner + " wins!";
     } else {
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+      status = `It's ${this.state.xIsNext ? "X" : "O"}'s turn!`;
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
+      <div className="tic-tac-toe m-1">
+        <div>{status}</div>
+        <Board
+          squares={this.state.squares}
+          onClick={(i) => this.handleClick(i)}
+        />
+        <button
+          disabled={winner === null}
+          className="btn btn-primary"
+          onClick={this.handleReset}
+        >
+          Reset
+        </button>
       </div>
     );
   }
 }
 
-function calculateWinner(squares) {
+function determineWinner(squares) {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -140,4 +102,4 @@ function calculateWinner(squares) {
   return null;
 }
 
-export default Game;
+export default TicTacToe;
