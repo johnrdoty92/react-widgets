@@ -69,20 +69,20 @@ class WeatherApp extends Component {
 let chooseIcon = (inputText, description) => {
   switch (inputText) {
     case "Clear":
-      return "/weather_icons/sunny.svg";
+      return "../../public/weather_icons/sunny.svg";
     case "Clouds":
       //add time check to choose sun or moon
       if (description == "few clouds") {
-        return "/weather_icons/sunny-cloudy.svg";
+        return "../../public/weather_icons/sunny-cloudy.svg";
       }
-      return "/weather_icons/cloudy.svg";
+      return "../../public/weather_icons/cloudy.svg";
     case "Drizzle":
     case "Rain":
-      return "/weather_icons/rain.svg";
+      return "../../public/weather_icons/rain.svg";
     case "Thunderstorm":
-      return "/weather_icons/thunder.svg";
+      return "../../public/weather_icons/thunder.svg";
     case "Snow":
-      return "/weather_icons/snow.svg";
+      return "../../public/weather_icons/snow.svg";
     case "Mist":
     case "Smoke":
     case "Haze":
@@ -92,9 +92,9 @@ let chooseIcon = (inputText, description) => {
     case "Ash":
     case "Squall":
     case "Tornado":
-      return "/weather_icons/mist.svg";
+      return "../../public/weather_icons/mist.svg";
     default:
-      return "/weather_icons/sunny.svg";
+      return "../../public/weather_icons/sunny.svg";
   }
 };
 
