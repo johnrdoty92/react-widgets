@@ -7,7 +7,6 @@
 
 body {
   font: 20px "Quicksand", sans-serif;
-  /* font-family: 'Quicksand', sans-serif; */
   margin: 20px;
 }
 
@@ -57,3 +56,10 @@ body {
   );
   text-align: right;
 }
+
+/*=========================== WEATHER STYLES ===========================*/
+
+.weather__city {
+  text-transform: uppercase;
+}
+

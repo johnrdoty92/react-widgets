@@ -7,8 +7,10 @@ class WeatherApp extends Component {
     super(props);
     this.state = {
       city: "",
-      icon: "",
+      icon: [null,null],
       temp: "",
+      main: "",
+      humidity: "",
       desc: "",
       high: "",
       low: "",
@@ -37,18 +39,19 @@ class WeatherApp extends Component {
       });
     const { weather, main } = currentWeather;
     this.setState({
-      icon: chooseIcon(weather[0].main, weather[0].description),
+      icon: [weather[0].main, weather[0].description],
       temp: Math.round(main.temp),
+      main: weather[0].main,
       desc: weather[0].description,
+      humidity: main.humidity,
       high: Math.round(main.temp_max),
       low: Math.round(main.temp_min),
       feelsLike: Math.round(main.feels_like),
     });
-    console.log(this.state);
   }
 
   render() {
-    const { city, icon, temp, desc, high, low, feelsLike } = this.state;
+    const { city, icon, temp, desc, high, low, feelsLike, humidity, main } = this.state;
     return (
       <div>
         <Search onSubmit={this.handleSubmit} />
@@ -56,6 +59,8 @@ class WeatherApp extends Component {
           city={city}
           icon={icon}
           temp={temp}
+          humidity={humidity}
+          main={main}
           desc={desc}
           high={high}
           low={low}
@@ -65,37 +70,5 @@ class WeatherApp extends Component {
     );
   }
 }
-
-let chooseIcon = (inputText, description) => {
-  switch (inputText) {
-    case "Clear":
-      return "../../public/weather_icons/sunny.svg";
-    case "Clouds":
-      //add time check to choose sun or moon
-      if (description == "few clouds") {
-        return "../../public/weather_icons/sunny-cloudy.svg";
-      }
-      return "../../public/weather_icons/cloudy.svg";
-    case "Drizzle":
-    case "Rain":
-      return "../../public/weather_icons/rain.svg";
-    case "Thunderstorm":
-      return "../../public/weather_icons/thunder.svg";
-    case "Snow":
-      return "../../public/weather_icons/snow.svg";
-    case "Mist":
-    case "Smoke":
-    case "Haze":
-    case "Dust":
-    case "Fog":
-    case "Sand":
-    case "Ash":
-    case "Squall":
-    case "Tornado":
-      return "../../public/weather_icons/mist.svg";
-    default:
-      return "../../public/weather_icons/sunny.svg";
-  }
-};
 
 export default WeatherApp;
