@@ -22,7 +22,7 @@ function Icon(props) {
       }
     case "Clouds":
       //add time check to choose sun or moon
-      if (props.description == "few clouds") {
+      if (props.description === "few clouds") {
         if (time < 18 && time > 6) {
           return <SunnyCloudy className="weather__icon col" />;
         } else {
@@ -61,6 +61,16 @@ class TodaysWeather extends Component {
     if (!this.props.city) {
       return (
         <div>
+          <div className="text-muted text-center">
+            Weather API provided by OpenWeatherMap
+          </div>
+        </div>
+      );
+    }
+    if (this.props.error) {
+      return (
+        <div>
+          <div className="text-center m-4">{this.props.error}</div>
           <div className="text-muted text-center">
             Weather API provided by OpenWeatherMap
           </div>
