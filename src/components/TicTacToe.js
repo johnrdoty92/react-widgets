@@ -64,15 +64,15 @@ class TicTacToe extends Component {
     }
 
     return (
-      <div className="tic-tac-toe m-1">
-        <div>{status}</div>
+      <div className="tic-tac-toe d-flex flex-column justify-content-center m-1">
+        <h3 className="text-center">{status}</h3>
         <Board
           squares={this.state.squares}
           onClick={(i) => this.handleClick(i)}
         />
         <button
           disabled={winner === null}
-          className="btn btn-primary"
+          className="btn btn-primary mt-1 mb-4"
           onClick={this.handleReset}
         >
           Reset

@@ -53,7 +53,7 @@ class WeatherApp extends Component {
   render() {
     const { city, icon, temp, desc, high, low, feelsLike, humidity, main } = this.state;
     return (
-      <div>
+      <div className="weather m-2">
         <Search onSubmit={this.handleSubmit} />
         <TodaysWeather
           city={city}

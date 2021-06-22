@@ -11,9 +11,12 @@ class Widgets extends React.Component {
   render() {
     return (
       <div id="home" className="container">
-        <TicTacToe />
-        <Calculator />
+        <h1 className="text-center m-2">Weather Forecast</h1>
         <WeatherApp />
+        <h1 className="text-center m-2">Calculator</h1>
+        <Calculator />
+        <h1 className="text-center m-2">Tic Tac Toe</h1>
+        <TicTacToe />
       </div>
     );
   }
