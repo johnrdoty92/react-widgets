@@ -29,7 +29,7 @@ class LocalStorageApp extends Component {
             : "Please Log In"}
         </h2>
         <div className="container">
-          <label className="form-label col" for="user">
+          <label className="form-label col" htmlFor="user">
             User:
             <input
               id="user"
@@ -49,7 +49,7 @@ class LocalStorageApp extends Component {
               name="rememberMe"
               onChange={this.handleChange}
             />
-            <label className="form-check-label" for="rememberMe">
+            <label className="form-check-label" htmlFor="rememberMe">
               Remember me
             </label>
           </div>

@@ -53,9 +53,6 @@ function Icon(props) {
 }
 
 class TodaysWeather extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     if (!this.props.city) {

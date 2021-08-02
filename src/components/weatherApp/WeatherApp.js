@@ -31,7 +31,7 @@ class WeatherApp extends Component {
   async fetchData(city) {
     const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=424de56009858404726bd5953c8f94a4&units=imperial`;
 
-    const currentWeather = await fetch(currentURL)
+    fetch(currentURL)
       .then((res) => {
         console.log(res.ok);
         return res.json();

@@ -44,7 +44,6 @@ class TicTacToe extends Component {
         squares: squares,
         xIsNext: xIsNext,
       });
-      console.log(this.state.xIsNext, i);
     }
   }
 
@@ -56,11 +55,20 @@ class TicTacToe extends Component {
   }
   render() {
     let winner = determineWinner(this.state.squares);
+    let tie = this.state.squares.every((elem) => elem !== null);
+    let isDisabled;
     let status;
+    console.log("Tie: " + tie);
+    console.log("Winner: " + winner);
     if (winner) {
       status = winner + " wins!";
+      isDisabled = false;
+    } else if (tie) {
+      status = "It's a tie!";
+      isDisabled = false;
     } else {
       status = `It's ${this.state.xIsNext ? "X" : "O"}'s turn!`;
+      isDisabled = true;
     }
 
     return (
@@ -71,7 +79,7 @@ class TicTacToe extends Component {
           onClick={(i) => this.handleClick(i)}
         />
         <button
-          disabled={winner === null}
+          disabled={isDisabled}
           className="btn btn-primary mt-1 mb-4"
           onClick={this.handleReset}
         >
